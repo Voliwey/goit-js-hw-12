@@ -1,4 +1,8 @@
 import axios from 'axios';
+import iziToast from 'izitoast';
+
+import 'simplelightbox/dist/simple-lightbox.min.css';
+import 'izitoast/dist/css/iziToast.min.css';
 
 const API_KEY = '43082908-d5bb253eb19cb17ad501330a7';
 const baseURL = 'https://pixabay.com/api/';
@@ -19,7 +23,11 @@ export async function fetchImages(searchQuery, page, perPage) {
 
         return response.data;
     } catch (error) {
-        console.error('Error fetching images:', error);
+        iziToast.error({
+            title: 'Error',
+            message: 'Failed to fetch images. Please try again later.',
+            position: 'topCenter',
+        });
         throw error;
     }
 }

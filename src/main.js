@@ -108,7 +108,6 @@ loadMoreBtn.addEventListener('click', async () => {
     }
 });
 
-// *loader
 function showLoader() {
     loader.classList.remove('hidden');
 }
@@ -117,7 +116,6 @@ function hideLoader() {
     loader.classList.add('hidden');
 }
 
-// * button load more images
 function showLoadMoreBtn() {
     loadMoreBtn.style.display = 'block';
 }
@@ -133,7 +131,6 @@ function hideEndOfCollectionMessage() {
     }
 }
 
-// * scroll
 window.addEventListener('scroll', () => {
     if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
         scrollToTopBtn.style.display = 'flex';
